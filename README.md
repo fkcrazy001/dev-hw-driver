@@ -28,7 +28,6 @@ https://gitee.com/phytium_embedded/phytium-standalone-sdk
 #### 作业2
 
 * 基于模拟器Qemu，其ARM64 virt型号提供了GPIO来实现关机功能。
-
 我们需要编写具有关机功能的GPIO驱动，最终实现在ArceOS上关机。
 
 **Qemu GPIO驱动关机原理**
@@ -56,7 +55,7 @@ OS收到中断后，需要对此次GPIO中断进行清除，将GPIOIC（中断�
 
 若有硬件板子的童鞋，可以继续选择原作业1：
 
-ArceOS for 飞腾派硬件平台上实现GPIO点灯驱动
+* ArceOS for 飞腾派硬件平台上实现GPIO点灯驱动
 
 ## 第二周
 
