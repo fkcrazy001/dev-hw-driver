@@ -1,6 +1,6 @@
 # 独立的硬件设备驱动开发
 
-## 第一周
+## 硬件设备驱动开发参考资料
 
 独立的硬件设备驱动开发，需要用到硬件开发板厂商用到的文档及代码等资源。
 
@@ -23,9 +23,18 @@ https://gitee.com/phytium_embedded/phytium-standalone-sdk
 * [飞腾派裸机SDK指导手册 （含各类驱动示例）](https://gitee.com/phytium_embedded/phytium-embedded-docs/blob/master/phytiumpi/rtos/%E9%A3%9E%E8%85%BE%E6%B4%BE%E8%A3%B8%E6%9C%BASDK%E6%8C%87%E5%AF%BC%E6%89%8B%E5%86%8C-v1.0.pdf)
 
 
-### 作业
+**硬件设备驱动开发教程演示文稿** 请见：https://github.com/elliott10/dev-hw-driver/tree/main/docs/
 
-#### 作业2
+## 硬件设备驱动开发作业
+
+### 第一周
+
+驱动开发学生的作业，以代码仓库链接及运行效果截图的方式
+
+提交于该链接
+https://github.com/elliott10/dev-hw-driver/issues/1
+
+### 作业2
 
 * 基于模拟器Qemu，其ARM64 virt型号提供了GPIO来实现关机功能。
 我们需要编写具有关机功能的GPIO驱动，最终实现在ArceOS上关机。
@@ -51,12 +60,31 @@ OS收到中断后，需要对此次GPIO中断进行清除，将GPIOIC（中断�
 2. 中断处理函数中，处理39号中断，通过读取pl061来清除它的中断信号
 3. 执行关机指令：`mov w0, #0x18`; `hlt #0xF000`
 
-#### 作业1
+### 作业1
 
 若有硬件板子的童鞋，可以继续选择原作业1：
 
 * ArceOS for 飞腾派硬件平台上实现GPIO点灯驱动
 
-## 第二周
 
-作业：
+### 第二周
+
+驱动开发学生的作业，以代码仓库链接及运行效果截图的方式
+
+提交于该链接
+https://github.com/elliott10/dev-hw-driver/issues/3
+
+#### 本周驱动作业：
+
+* 在飞腾派板子或模拟器上实现Watchdog看门狗设备驱动，实现看门狗初始化使能，设置超时值，喂狗，超时复位等功能。
+
+![homework week2](docs/homework-week2.png)
+
+参考飞腾派数据手册datasheet:
+https://github.com/elliott10/dev-hw-driver/blob/main/phytiumpi/docs/飞腾派软件编程手册V1.0.pdf
+
+参考飞腾派SDK例程序：
+https://gitee.com/phytium_embedded/phytium-standalone-sdk/tree/master/example/peripherals/wdt
+
+参考飞腾派Linux看门狗驱动代码：
+https://gitee.com/phytium_embedded/phytium-linux-kernel/blob/linux-5.10/drivers/watchdog/sbsa_gwdt.c
